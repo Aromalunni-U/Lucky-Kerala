@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container-fluid">
+    {% if result %}
+      <div class="container mt-3">
+        <div class="text-center alert alert-primary alert-dismissible fade show" role="alert">
+          <h3>{{ result }}</h3>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="container mt-3 p-5 shadow-lg" style="background-color:white;border-top: 15PX SOLID #006A67;border-top-left-radius: 70px;border-bottom-right-radius: 70px;">
+      <h2>Kerala Lottery</h2>
+
+      <form method="POST" enctype="multipart/form-data" class="p-5">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="lottery" class="form-label">Select a Lottery</label>
+          <select class="form-select" id="lottery" name="lottery" required>
+            <option selected disabled>Choose...</option>
+            <option value="win win">Win-Win</option>
+            <option value="sthree sakthi">Sthree Sakthi</option>
+            <option value="akshaya">Akshaya</option>
+            <option value="karunya plus">Karunya Plus</option>
+            <option value="Nirmal">Nirmal</option>
+            <option value="karunya">Karunya</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input type="file" class="form-control" id="image" name="image" accept="image/*" required />
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
