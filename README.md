@@ -24,7 +24,7 @@
 ### Setup Instructions
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/lucky-kerala.git
+   git clone https://github.com/Aromalunni-U/Lucky-Kerala.git
    cd project
    ```
 2. Install dependencies:
